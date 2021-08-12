@@ -8,6 +8,7 @@ class Person:
         # The Person's name
         self.firstName = firstName
         self.lastName = lastName
+        self.fullName = self.firstName + " " + self.lastName
         
         # The Person's Level management
         self.Level = 1
