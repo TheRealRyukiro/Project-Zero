@@ -27,10 +27,6 @@ class Battle:
             playerDamage = Player.equippedWeapon.dmg
             enemyDamage = Enemy.equippedWeapon.dmg
 
-            #This combines the first & last name of the enemy and the player
-            playerFullName = Player.firstName + " " + Player.lastName
-            enemyFullName = Enemy.firstName + " " + Enemy.lastName
-
             if playerBar >= 100:
                 # The Player's turn to attack
                 playerBar -= 100
@@ -45,7 +41,7 @@ class Battle:
                       \nCarry weight: {currentCarryWeight} / {maxCarryWeight}lbs\
                       \nGold: {Money:,.2f}\
                       \nDays survived: {Days}".format(
-                                                        Name = playerFullName,
+                                                        Name = Player.fullName,
                                                         Health = str(Player.Health),
                                                         maxHealth = str(Player.maxHealth),
                                                         Level = str(Player.Level),
@@ -63,7 +59,7 @@ class Battle:
                 printC("It's your turn")
                 printC("You attack for {Damage} damage.".format(Damage = playerDamage))
                 printC("Player has {Health} health left".format(Health = str(Player.Health))) 
-                printC("The {Name} has {Health} health left".format(Name = enemyFullName, Health = str(Enemy.Health)))
+                printC("The {Name} has {Health} health left".format(Name = Enemy.fullName, Health = str(Enemy.Health)))
                 inputC("Press ENTER to move to next turn.")
                 
             
@@ -82,7 +78,7 @@ class Battle:
                       \nCarry weight: {currentCarryWeight} / {maxCarryWeight}lbs\
                       \nGold: {Money:,.2f}\
                       \nDays survived: {Days}".format(
-                                                        Name = playerFullName,
+                                                        Name = Player.fullName,
                                                         Health = str(Player.Health),
                                                         maxHealth = str(Player.maxHealth),
                                                         Level = str(Player.Level),
@@ -97,23 +93,23 @@ class Battle:
 
                 printC("{firstName} {lastName}s Turn".format(firstName = Enemy.firstName, lastName = Enemy.lastName))
                 
-                printC("The {Name} attacks for {Damage} damage".format(Name = enemyFullName, Damage = enemyDamage))
+                printC("The {Name} attacks for {Damage} damage".format(Name = Enemy.fullName, Damage = enemyDamage))
                 printC("Player has: {Health} health left".format(Health = Player.Health))
-                printC("The {Name} has: {Health} health left".format(Name = enemyFullName, Health = Enemy.Health))
+                printC("The {Name} has: {Health} health left".format(Name = Enemy.fullName, Health = Enemy.Health))
                 inputC("Press ENTER to move to next turn.")
                 time.sleep(1.5)
     
 
                
             if(Player.Health <= 0):
-                printC("The {Name} has won the battle with {Health} health left".format(Name = enemyFullName, Health = str(Enemy.Health)))
+                printC("The {Name} has won the battle with {Health} health left".format(Name = Enemy.fullName, Health = str(Enemy.Health)))
                 print("get rekt")
                 time.sleep(1.5)
                 return False
             
             
             elif(Enemy.Health <= 0):
-                printC("You defeated the {Name} with {Health} health left".format(Name = enemyFullName, Health = str(Enemy.Health)))
+                printC("You defeated the {Name} with {Health} health left".format(Name = Enemy.fullName, Health = str(Enemy.Health)))
                 Player.gainExp(5)
                 time.sleep(1.5)
                 return True
