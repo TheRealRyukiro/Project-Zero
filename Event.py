@@ -142,7 +142,9 @@ class Event:
                             break  # randomly pickes a number between 0 and 25 to give gold to the player
                         
 
-                        if encounter == ("You open the bag and find a mysterious tome, you open the book.The books pages turn rapidly.You have acquired new knowledge!!!"):
+                        if encounter == ("You open the bag and find a mysterious tome, you open the book.\
+                                          The books pages turn rapidly.\
+                                          You have acquired new knowledge!!!"):
                             self.Player.gainExp(random.randrange(0 , 101))
                             break
                         #-------------------------------------End bag Randomizer-----------------------------------#
@@ -168,30 +170,33 @@ class Event:
                             
 
                             if self.chanceToFlee((30 / 100)):
-                                printC("You successfully snuck by the " + sleepyGoblin.firstName + " " + sleepyGoblin.lastName + "!")
+                                printC("You successfully snuck by the {} {} !".format(sleepyGoblin.firstName , sleepyGoblin.lastName ))
                                 self.Player.gainDay() # add 1 day to the gain day counter
                                 break
 
 
                             else:
-                                printC("You failed your attempt to flee from the " + sleepyGoblin.firstName + " " + sleepyGoblin.lastName + "!")
+                                printC("You failed your attempt to flee from the {} {} !".format(sleepyGoblin.firstName , sleepyGoblin.lastName ))
                                 if (battle.Fight() == False): self.die() #starts the battle state True if you win false if you die
                                 self.Player.gainDay() # add 1 day to the gain day counter
                                 break
                         #------------------------------------End of tower------------------------------#   
-
+                        else:
+                            printC("Sorry thats not a answer")
                         
                      
                 elif(answer == "No"): # Decision statement from the player to enter the tower  
                     inputC("You continue on your way.Press enter to continue...") # End of encounter
                     self.Player.gainDay() # add 1 day to the gain day counter
                     break
+                else:
+                    printC("Sorry thats not a answer")
                 #----------------------------------------End of tower encounter-------------------------------------#
                             
              #----------------------------------------start of camp encounter---------------------------------------#
             elif(event == "Along your journy you come across a camp."):
                 encounter = random.choice(campEncounter)
-
+                printC(encounter)
                 if encounter == ("You walk closer to the camp. it appears to be deserted..."):
                     answer = inputC("Would you like to sleep at the camp (yes/no) ") # user decides whether to sleep at the cam or not (risks included)
 
@@ -208,6 +213,8 @@ class Event:
                         answer == inputC("You continue on your way.Press enter to continue...")
                         self.Player.gainDay()
                         break
+                    else:
+                        printC("Sorry thats not a answer")
 
 
                 elif encounter == ("You walk closer to the camp.You spot a mysterious figure walking out of one the tents. "):
@@ -256,7 +263,8 @@ class Event:
                                         shopWeapon1 = random.choice(shopWeaponRadomizer)
                                         shopWeapon2 = random.choice(shopWeaponRadomizer) 
                                         
-                                        answer = inputC("The goblins stock includes: " + shopWeapon1 + " for " + str(shopWeapon1.goldCost) + " Gold " + shopWeapon2 + " for " + str(shopWeapon2.goldCost) + " Gold " + random.choice(shopPotionRadomizer)).capitalize()
+                                        answer = inputC("The goblins stock includes: {} for {} Gold ".format(shopWeapon1 , str(shopWeapon1.goldCost )) /
+                                        "{} for {} gold" (shopWeapon2, str(shopWeapon2.goldCost)) + " Gold " + random.choice(shopPotionRadomizer)).capitalize()
                                         printC("Please type weapon one if you chose to buy the shopWeapon1")
                                         printC("Please type weapon two if you chose to buy the second weapon")
                                         printC("please type potion if you chose to buy the potion")
@@ -280,10 +288,15 @@ class Event:
                                         
                                     if(answer == "no"):
                                         inputC("You decide not to see his wears and you continue on your way...")   
+                                    else:
+                                        printC("Sorry thats not a answer")
 
                     if(answer == "no"):
                         inputC("You continue on your way...")
                         break
+                    else:
+                        printC("Sorry thats not a answer")
+
 
 
 
@@ -291,6 +304,7 @@ class Event:
             
             #-----------------------------------------Start of goblin encounter--------------------------------#
             elif(event == "You encounter a stray goblin on your journey."):
+
                 answer = inputC("Would you like to face the goblin or try to flee!! (face or flee) ")
                 goblin = Person ("lonely","goblin",self.Player.Difficulty,30,1,False, Weapon.rustySword)
                 battle = Battle(self.Player, goblin) # battle takes the player and the enemy 
@@ -304,12 +318,15 @@ class Event:
 
                 if(answer == "flee"):
                     if self.chanceToFlee((30 / 100)):
-                        printC("You successfully fled from the goblin")
+                        printC("You successfully fled from the {} {}!"  .format( goblin.firstName , goblin.lastName))
                         self.Player.gainDay()
                         break
 
                     else:
-                        printC("You failed your attempt to flee from the " + goblin.firstName + " " + goblin.lastName + "!")
+                        printC("You failed your attempt to flee from the {} {}!"  .format( goblin.firstName , goblin.lastName))
                         if (battle.Fight() == False): self.die()
+
+                else:
+                    printC("Sorry thats not a answer")        
                 #-----------------------------------------End of goblin encounter--------------------------------#
                 
