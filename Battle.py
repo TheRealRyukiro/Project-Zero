@@ -17,8 +17,8 @@ class Battle:
         playerBar = 0
         enemyBar = 0
         while self.Player.Health > 0 and self.Enemy.Health > 0:
-            playerBar += self.Player.equippedWeapon.spd 
-            enemyBar += self.Enemy.equippedWeapon.spd  
+            playerBar += self.Player.equippedWeapon.Speed 
+            enemyBar += self.Enemy.equippedWeapon.Speed  
         
 
             if playerBar >= 100:
@@ -27,8 +27,8 @@ class Battle:
                 clear()
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                  
-                print("Name: " + self.Player.firstName + " " + self.Player.lastName + "\nHealth " + str(self.Player.Health) + " / " + str(self.Player.maxHealth)+"\nlv " +  str(self.Player.level) + "\nExp" + str(self.Player.Exp) + " / " + str(self.Player.ExpLevelUp) + "\nCarry weight: " + str(self.Player.currentCarryWeight) + " / " + str(self.Player.maxCarryWeight) 
-                + " lbs\ngold: {:,.2f}".format(self.Player.money) + "\nDays survived: " + str(self.Player.days))
+                print("Name: " + self.Player.firstName + " " + self.Player.lastName + "\nHealth " + str(self.Player.Health) + " / " + str(self.Player.maxHealth)+"\nlv " +  str(self.Player.Level) + "\nExp" + str(self.Player.Exp) + " / " + str(self.Player.ExpLevelUp) + "\nCarry weight: " + str(self.Player.currentCarryWeight) + " / " + str(self.Player.maxCarryWeight) 
+                + " lbs\ngold: {:,.2f}".format(self.Player.Money) + "\nDays survived: " + str(self.Player.Days))
                 
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
@@ -36,7 +36,7 @@ class Battle:
                 printC("Its your Turn")
                 printC("You Attack for " + str(self.Player.equippedWeapon.dmg) + " damage.")
                 printC("Player has: {} health left".format(self.Player.Health)) 
-                printC("The " + self.Enemy.lastName + "has: {} health left".format(self.Enemy.Health))
+                printC("The " + self.Enemy.lastName + " has: {} health left".format(self.Enemy.Health))
                 inputC("Press ENTER to move to next turn.")
                 
             
@@ -48,21 +48,21 @@ class Battle:
                 clear()
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
                  
-                print("Name: " + self.Player.firstName + " " + self.Player.lastName + "\nHealth " + str(self.Player.Health) + " / " + str(self.Player.maxHealth)+"\nlv " +  str(self.Player.level) + "\nExp" + str(self.Player.Exp) + " / " + str(self.Player.ExpLevelUp) + "\nCarry weight: " + str(self.Player.currentCarryWeight) + " / " + str(self.Player.maxCarryWeight) 
-                + " lbs\ngold: {:,.2f}".format(self.Player.money) + "\nDays survived: " + str(self.Player.days))
+                print("Name: " + self.Player.firstName + " " + self.Player.lastName + "\nHealth " + str(self.Player.Health) + " / " + str(self.Player.maxHealth)+"\nlv " +  str(self.Player.Level) + "\nExp" + str(self.Player.Exp) + " / " + str(self.Player.ExpLevelUp) + "\nCarry weight: " + str(self.Player.currentCarryWeight) + " / " + str(self.Player.maxCarryWeight) 
+                + " lbs\ngold: {:,.2f}".format(self.Player.Money) + "\nDays survived: " + str(self.Player.Days))
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
                 printC(self.Enemy.firstName + " " + self.Enemy.lastName + "s Turn")
                 printC("The " + self.Enemy.firstName + " " + self.Enemy.lastName + " Attacks for "+ str(self.Enemy.equippedWeapon.dmg)+" damage")
                 printC("Player has: {} health left".format(self.Player.Health))
-                printC("The " + self.Enemy.lastName + "has: {} health left".format(self.Enemy.Health))
+                printC("The " + self.Enemy.lastName + " has: {} health left".format(self.Enemy.Health))
                 inputC("Press ENTER to move to next turn.")
                 time.sleep(1.5)
     
 
                
             if(self.Player.Health <= 0):
-                printC("The" + self.Enemy.firstName + " " + self.Enemy.lastName + " has won the battle {} health left".format(self.Enemy.Health))
+                printC("The " + self.Enemy.firstName + " " + self.Enemy.lastName + " has won the battle {} health left".format(self.Enemy.Health))
                 print("get rekt")
                 time.sleep(1.5)
                 return False
