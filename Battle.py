@@ -1,9 +1,5 @@
 from API import *
 
-'''
-    thisisabattlevariable = Battle(Player, Goblin)
-    thisisabattlevariable.Fight()
-'''
 
 
 class Battle:
