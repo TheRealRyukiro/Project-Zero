@@ -58,8 +58,8 @@ class Battle:
 
                 printC("It's your turn")
                 printC("You attack for {Damage} damage.".format(Damage = playerDamage))
-                printC("Player has {Health} health left".format(Health = str(Player.Health))) 
-                printC("The {Name} has {Health} health left".format(Name = Enemy.fullName, Health = str(Enemy.Health)))
+                printC("Player has {Health} health left".format(Health = Player.Health)) 
+                printC("The {Name} has {Health} health left".format(Name = Enemy.fullName, Health = Enemy.Health))
                 inputC("Press ENTER to move to next turn.")
                 
             
@@ -79,15 +79,15 @@ class Battle:
                       \nGold: {Money:,.2f}\
                       \nDays survived: {Days}".format(
                                                         Name = Player.fullName,
-                                                        Health = str(Player.Health),
-                                                        maxHealth = str(Player.maxHealth),
-                                                        Level = str(Player.Level),
-                                                        Exp = str(Player.Exp),
-                                                        ExpLevelUp = str(Player.ExpLevelUp),
-                                                        currentCarryWeight = str(Player.currentCarryWeight),
-                                                        maxCarryWeight = str(Player.maxCarryWeight),
-                                                        Money = str(Player.Money),
-                                                        Days = str(Player.Days)
+                                                        Health = Player.Health,
+                                                        maxHealth = Player.maxHealth,
+                                                        Level = Player.Level,
+                                                        Exp = Player.Exp,
+                                                        ExpLevelUp = Player.ExpLevelUp,
+                                                        currentCarryWeight = Player.currentCarryWeight,
+                                                        maxCarryWeight = Player.maxCarryWeight,
+                                                        Money = Player.Money,
+                                                        Days = Player.Days
                                                         ))
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
@@ -102,14 +102,14 @@ class Battle:
 
                
             if(Player.Health <= 0):
-                printC("The {Name} has won the battle with {Health} health left".format(Name = Enemy.fullName, Health = str(Enemy.Health)))
+                printC("The {Name} has won the battle with {Health} health left".format(Name = Enemy.fullName, Health = Enemy.Health))
                 print("get rekt")
                 time.sleep(1.5)
                 return False
             
             
             elif(Enemy.Health <= 0):
-                printC("You defeated the {Name} with {Health} health left".format(Name = Enemy.fullName, Health = str(Enemy.Health)))
+                printC("You defeated the {Name} with {Health} health left".format(Name = Enemy.fullName, Health = Enemy.Health))
                 Player.gainExp(5)
                 time.sleep(1.5)
                 return True
