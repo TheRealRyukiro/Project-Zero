@@ -42,15 +42,15 @@ class Battle:
                       \nGold: {Money:,.2f}\
                       \nDays survived: {Days}".format(
                                                         Name = Player.fullName,
-                                                        Health = str(Player.Health),
-                                                        maxHealth = str(Player.maxHealth),
-                                                        Level = str(Player.Level),
-                                                        Exp = str(Player.Exp),
-                                                        ExpLevelUp = str(Player.ExpLevelUp),
-                                                        currentCarryWeight = str(Player.currentCarryWeight),
-                                                        maxCarryWeight = str(Player.maxCarryWeight),
-                                                        Money = str(Player.Money),
-                                                        Days = str(Player.Days)
+                                                        Health = Player.Health,
+                                                        maxHealth = Player.maxHealth,
+                                                        Level = Player.Level,
+                                                        Exp = Player.Exp,
+                                                        ExpLevelUp = Player.ExpLevelUp,
+                                                        currentCarryWeight = Player.currentCarryWeight,
+                                                        maxCarryWeight = Player.maxCarryWeight,
+                                                        Money = Player.Money,
+                                                        Days = Player.Days
                                                         ))
                 
                 print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
