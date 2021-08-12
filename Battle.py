@@ -1,5 +1,10 @@
 from API import *
 
+'''
+    thisisabattlevariable = Battle(Player, Goblin)
+    thisisabattlevariable.Fight()
+'''
+
 
 class Battle:
     def __init__(self,Player,Enemy):

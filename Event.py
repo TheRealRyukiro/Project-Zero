@@ -82,7 +82,7 @@ class Event:
     def die(self): # This function displays youre stats on death
         clear() # clears the screen to cleanly diplay the players death stats
         print("\t\t\t You died\n~~~~~~~~~~~~~~~~~~~~~~")
-        print("Name: " + self.Player.firstName + " " + self.Player.lastName + "\nHealth " + str(self.Player.Health) + " / " + str(self.Player.maxHealth)+"\nlv " + str(self.Player.level) + "\nCarry weight: " + str(self.Player.currentCarryWeight) + " / " + str(self.Player.maxCarryWeight) 
+        print("Name: " + self.Player.firstName + " " + self.Player.lastName + "\nHealth " + str(self.Player.Health) + " / " + str(self.Player.maxHealth)+"\nlv " + str(self.Player.Level) + "\nCarry weight: " + str(self.Player.currentCarryWeight) + " / " + str(self.Player.maxCarryWeight) 
         + " lbs\ngold: {:,.2f}".format(self.Player.money) + "\nDays survived: " + str(self.Player.days))
         print("\n~~~~~~~~~~~~~~~~~~~~~~")
         sys.exit()
@@ -152,7 +152,7 @@ class Event:
                         
                         encounter = inputC("Sneak by or surprise attatck!! (sneak or surprise) ")
                         
-                        surprisedGoblin = Person ("Surprised","goblin",self.Player.difficulty,30,0,False, Weapon.rustySword) # sets the enemy's parameters
+                        surprisedGoblin = Person ("Surprised","goblin",self.Player.Difficulty,30,0,False, Weapon.rustySword) # sets the enemy's parameters
                             
                         battle = Battle(self.Player, surprisedGoblin) # battle takes the player and the enemy name 
                             
@@ -164,7 +164,7 @@ class Event:
                             
 
                         if(encounter == "sneak"): # if you try to sneack by the enemy
-                            sleepyGoblin = Person ("Sleepy","goblin",self.Player.difficulty,30,0,False, Weapon.rustySword)
+                            sleepyGoblin = Person ("Sleepy","goblin",self.Player.Difficulty,30,0,False, Weapon.rustySword)
                             
 
                             if self.chanceToFlee((30 / 100)):
@@ -223,15 +223,15 @@ class Event:
                             if self.chanceToBeFriendly((50 / 100)):
 
                                 inputC("The druid attacks you on sight")
-                                druid = Person ("Exiled","druid",self.Player.difficulty,30,1,False, Weapon.vineStaff)
+                                druid = Person ("Exiled","druid",self.Player.Difficulty,30,1,False, Weapon.vineStaff)
                                 battle = Battle(self.Player, druid)
                                 
                                 if (battle.Fight() == False): self.die()
                                 self.Player.gainDay()
                                 break
                             
-                        elif inputC("The druid appears to be friendly. He pulls the energy from the plants and trees around to heal all youre wounds"):
-                            self.player.Health = self.player.maxHealth
+                        elif inputC("The druid appears to be friendly. He pulls the energy from the plants and trees around to heal all your wounds"):
+                            self.Player.Health = self.Player.maxHealth
                             inputC("You have been fully restored says the druid!!!!")
                             break
                             
@@ -240,7 +240,7 @@ class Event:
                                 printC("You see the figure turn fast as he is was startled. Its a goblin!!!")
                                 if self.chanceToBeFriendly((50 / 100)):
 
-                                    goblin = Person ("wondering","goblin",self.Player.difficulty,30,1,False, Weapon.rustySword)
+                                    goblin = Person ("wondering","goblin",self.Player.Difficulty,30,1,False, Weapon.rustySword)
                                     battle = Battle(self.Player, goblin)
 
                                     if (battle.Fight() == False): self.die()
@@ -292,7 +292,7 @@ class Event:
             #-----------------------------------------Start of goblin encounter--------------------------------#
             elif(event == "You encounter a stray goblin on your journey."):
                 answer = inputC("Would you like to face the goblin or try to flee!! (face or flee) ")
-                goblin = Person ("lonely","goblin",self.Player.difficulty,30,1,False, Weapon.rustySword)
+                goblin = Person ("lonely","goblin",self.Player.Difficulty,30,1,False, Weapon.rustySword)
                 battle = Battle(self.Player, goblin) # battle takes the player and the enemy 
                 
                 

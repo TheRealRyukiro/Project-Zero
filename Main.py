@@ -12,7 +12,7 @@ clear()
 answer = input("Would you like to run the game? (yes/no) ")
 if(answer == "no"):
     sys.exit()  
-difficulty = input("Please select from one of three difficulties (Easy Medium Hard) ").capitalize()
+Difficulty = input("Please select from one of three difficulties (Easy Medium Hard) ").capitalize()
 clear()
 firstName = input("What is your adventurer's first name: ").capitalize()  # asks player for first name
 clear()
@@ -35,7 +35,7 @@ while True:
 
     if( answer == "yes"): 
         clear()
-        Player = Person(firstName,lastName,difficulty,100,1,True,equippedWeapon)
+        Player = Person(firstName,lastName,Difficulty,100,1,True,equippedWeapon)
         break
        
     elif(answer == "no"): # asks the user to re-enter the disired stats
@@ -54,13 +54,13 @@ while True:
         print("Please type yes or no as your answer")
 clear()
 
-print("Your starting gold is: {:,.2f}".format(Player.money))
+print("Your starting gold is: {:,.2f}".format(Player.Money))
 print("Your starting carry weight is: "+  str(Player.currentCarryWeight) + "/ "+ str(Player.maxCarryWeight))
 input("Press enter key to continue...")
 print("\n~~~~~~~~~~~~~~~~~~~~~~")
 
 print("First Name: " + Player.firstName + "\nLast Name: " + Player.lastName + "\nWeight: " + str(Player.currentCarryWeight) +  "/ " + str(Player.maxCarryWeight) 
-+ " lbs\nGold: {:,.2f}".format(Player.money))
++ " lbs\nGold: {:,.2f}".format(Player.Money))
 print("\n~~~~~~~~~~~~~~~~~~~~~~")
 
 
@@ -108,8 +108,8 @@ if (answer == "no"):
     print("You did nothing, you were eventuly spotted then killed")
     print("\n~~~~~~~~~~~~~~~~~~~~~~")
 
-    print("First Name: " + Player.firstName + " " + Player.lastName + "\nHealth " + str(Player.Health) + " / " + str(Player.maxHealth)+"\nlv " + str(Player.level) + "\nCarry weight: " + str(Player.currentCarryWeight) + " / " + str(Player.maxCarryWeight) 
-        + " lbs\ngold: {:,.2f}".format(Player.money) + "\nDays survived: " + str(Player.days))
+    print("First Name: " + Player.firstName + " " + Player.lastName + "\nHealth " + str(Player.Health) + " / " + str(Player.maxHealth)+"\nlv " + str(Player.Level) + "\nCarry weight: " + str(Player.currentCarryWeight) + " / " + str(Player.maxCarryWeight) 
+        + " lbs\ngold: {:,.2f}".format(Player.Money) + "\nDays survived: " + str(Player.Days))
     print("\n~~~~~~~~~~~~~~~~~~~~~~")
     sys.exit()
 
@@ -122,8 +122,8 @@ while True:
 
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     
-    print("Name: " + Player.firstName + " " + Player.lastName + "\nHealth " + str(Player.Health) + " / " + str(Player.maxHealth)+"\nlv " +  str(Player.level) + "\nExp" + str(Player.Exp) + " / " + str(Player.ExpLevelUp) + "\nCarry weight: " + str(Player.currentCarryWeight) + " / " + str(Player.maxCarryWeight) 
-        + " lbs\ngold: {:,.2f}".format(Player.money) + "\nDays survived: " + str(Player.days))
+    print("Name: " + Player.firstName + " " + Player.lastName + "\nHealth " + str(Player.Health) + " / " + str(Player.maxHealth)+"\nlv " +  str(Player.Level) + "\nExp" + str(Player.Exp) + " / " + str(Player.ExpLevelUp) + "\nCarry weight: " + str(Player.currentCarryWeight) + " / " + str(Player.maxCarryWeight) 
+        + " lbs\ngold: {:,.2f}".format(Player.Money) + "\nDays survived: " + str(Player.Days))
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     
     

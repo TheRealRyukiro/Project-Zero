@@ -5,12 +5,12 @@
 
 
 class Person:
-    def __init__(self, firstName, lastName, difficulty, health, Speed,isFriendly = True, equippedWeapon = None): #def means to define x as a function. __init__ is the constructor that initializes the class when called. everything in the () are parameters to the constructor.
+    def __init__(self, firstName, lastName, Difficulty, health, Speed,isFriendly = True, equippedWeapon = None): #def means to define x as a function. __init__ is the constructor that initializes the class when called. everything in the () are parameters to the constructor.
         # The Person's name
         self.firstName = firstName
         self.lastName = lastName
         
-        # The Person's level management
+        # The Person's Level management
         self.Level = 1
         self.Exp = 0
         self.ExpLevelUp = 10
@@ -32,16 +32,16 @@ class Person:
         # what weapon the person has equipped
         self.equippedWeapon = equippedWeapon
         
-        # what difficulty is the person
-        self.Difficulty = difficulty
+        # what Difficulty is the person
+        self.Difficulty = Difficulty
         # if the person is friendly to the player or not
         self.isFriendly = isFriendly
         
-        # how many days the player survived
+        # how many Days the player survived
         self.Days = 0
 
 
-        # modifies stats based on the Person's difficulty
+        # modifies stats based on the Person's Difficulty
         if(self.Difficulty.capitalize() == "Easy"):
             self.Money = 500
             if(isFriendly): self.Health *= 2
@@ -106,8 +106,8 @@ class Person:
 
     # Person gains a survived day
     def gainDay(self):
-        self.days += 1
-        return self.days # Adds a day survived then returns how many days it survived
+        self.Days += 1
+        return self.Days # Adds a day survived then returns how many Days it survived
     
 
     def gainExp(self,amount):
