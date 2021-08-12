@@ -83,7 +83,7 @@ class Event:
         clear() # clears the screen to cleanly diplay the players death stats
         print("\t\t\t You died\n~~~~~~~~~~~~~~~~~~~~~~")
         print("Name: " + self.Player.firstName + " " + self.Player.lastName + "\nHealth " + str(self.Player.Health) + " / " + str(self.Player.maxHealth)+"\nlv " + str(self.Player.Level) + "\nCarry weight: " + str(self.Player.currentCarryWeight) + " / " + str(self.Player.maxCarryWeight) 
-        + " lbs\ngold: {:,.2f}".format(self.Player.money) + "\nDays survived: " + str(self.Player.days))
+        + " lbs\ngold: {:,.2f}".format(self.Player.Money) + "\nDays survived: " + str(self.Player.days))
         print("\n~~~~~~~~~~~~~~~~~~~~~~")
         sys.exit()
 #----------Event-----------#
