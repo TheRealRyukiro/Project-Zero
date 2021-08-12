@@ -16,7 +16,7 @@ Have shop encounters between events set after x amount of encounts based on worl
 """
 #----------Imports----------#
 
-from math import e
+from math import *
 from Person import Person
 from Battle import Battle
 import Weapon
