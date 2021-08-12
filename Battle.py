@@ -1,6 +1,5 @@
 from API import *
 
-# test 123fdsijfids
 
 class Battle:
     def __init__(self,Player,Enemy):
