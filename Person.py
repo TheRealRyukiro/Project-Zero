@@ -2,7 +2,7 @@
     This is the Person Class. This class is used to create new people.
 
 """ 
-# test 
+# test tommy
 
 class Person:
     def __init__(self, firstName, lastName, Difficulty, health, Speed,isFriendly = True, equippedWeapon = None): #def means to define x as a function. __init__ is the constructor that initializes the class when called. everything in the () are parameters to the constructor.
