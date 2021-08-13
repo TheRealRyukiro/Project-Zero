@@ -82,10 +82,25 @@ class Event:
         self.Player = Player
     def die(self): # This function displays youre stats on death
         clear() # clears the screen to cleanly diplay the players death stats
-        print("\t\t\t You died\n~~~~~~~~~~~~~~~~~~~~~~")
-        print("Name: " + self.Player.firstName + " " + self.Player.lastName + "\nHealth " + str(self.Player.Health) + " / " + str(self.Player.maxHealth)+"\nlv " + str(self.Player.Level) + "\nCarry weight: " + str(self.Player.currentCarryWeight) + " / " + str(self.Player.maxCarryWeight) 
-        + " lbs\ngold: {:,.2f}".format(self.Player.Money) + "\nDays survived: " + str(self.Player.days))
-        print("\n~~~~~~~~~~~~~~~~~~~~~~")
+         
+        print("Name: {Name}\
+            \nHealth: {Health} / {maxHealth}\
+            \nlevel: {Level}\
+            \nExp: {Exp} / {ExpLevelUp}\
+            \nCarry weight: {currentCarryWeight} / {maxCarryWeight}lbs\
+            \nGold: {Money:,.2f}\
+            \nDays survived: {Days}".format(
+                                            Name = self.fullName,
+                                            Health = self.Health,
+                                            maxHealth = self.maxHealth,
+                                            Level = self.Level,
+                                            Exp = self.Exp,
+                                            ExpLevelUp = self.ExpLevelUp,
+                                            currentCarryWeight = self.currentCarryWeight,
+                                            maxCarryWeight = self.maxCarryWeight,
+                                            Money = self.Money,
+                                            Days = self.Days
+                                                        ))
         sys.exit()
 #----------Event-----------#
 
