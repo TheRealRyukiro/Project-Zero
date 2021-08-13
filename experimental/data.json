@@ -1,0 +1,12 @@
+{
+    "Player" : {
+    "Name":"Tommy",
+    "Health":20,
+    "Weapon": {}
+    },
+    "Enemy" : {
+        "Name":"Goblin",
+        "Health":21,
+        "Weapon": {}
+    }
+}
