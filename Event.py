@@ -199,7 +199,7 @@ class Event:
                             self.Player.gainDay() # Add 1 day to the gain day counter
                             break
                         else:
-                            event == ("You walk along the path and find tower.") # catch statement 
+                            print("I'm sorry, but that's not a valid answer") # catch statement 
                 #----------------------------------------End of tower encounter-------------------------------------#
                             
              #----------------------------------------start of camp encounter---------------------------------------#while true:        
