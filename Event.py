@@ -34,7 +34,7 @@ from API import *
 
 
 #-----------------Location encounters------------------------#
-locationEncounter = ["Along your journy you come across a camp.",
+locationEncounter = ["Along your journey you come across a camp.",
                      "You encounter a stray goblin on your journey.",
                      "You walk along the path and find tower.",
                     ]
@@ -57,7 +57,7 @@ bagRandomizer = ["You open the bag and to your suprise you find a pouch of gold!
 
 
 #-----------------Camp encounters------------------------#
-campEncounter = ["You walk closer to the camp.You spot a mysterious figure walking out of one the tents. ",
+campEncounter = ["You walk closer to the camp.You spot a mysterious figure walking out of one the tents.",
                  "You walk closer to the camp. it appears to be deserted..."  ]
 
 #------------------shop weapon radomizer-----------------#
@@ -109,14 +109,13 @@ class Event:
      
 
     #------------------------Escape chance---------------------#
-    answer = None
-    encounter = None
+    
     def newEvent(self): # function spawns a new event 
+        answerCheck = True
         Player = None 
         while True:    
 
-
-            event = random.choice(locationEncounter) # randomly pickes a location encounter for the locationEncounter list
+            if(answerCheck): event = random.choice(locationEncounter) # randomly pickes a location encounter for the locationEncounter list
             
             printC(event) # prints the encounter that has been chosen to the player.
             
@@ -124,7 +123,7 @@ class Event:
             while True: 
                     if(event == "You walk along the path and find tower."):
                         answer = inputC("Would you like to enter the tower (yes/no) ").capitalize() # user decides whether to enter the tower or not (risks included)
-                        encounter = random.choice(towerEncounter)
+                        if(answerCheck): encounter = random.choice(towerEncounter)
 
                         if(answer == "Yes"):   # Decision statement from the player to enter the tower  
                             self.Player.gainDay()   # add 1 day to the gain day counter
@@ -137,7 +136,7 @@ class Event:
                                 
 
                                 #-------------------------------------Start bagRandomizer-----------------------------------#
-                                encounter = random.choice(bagRandomizer)   # this picks a random encounter inside the towerEncounter array. then stores it temporarily in the encounter var
+                                if(answerCheck): encounter = random.choice(bagRandomizer)   # this picks a random encounter inside the towerEncounter array. then stores it temporarily in the encounter var
                                 printC(encounter)
                                 inputC("Press any key to continue...")
                                 
@@ -158,7 +157,7 @@ class Event:
                                 #------------------------------------Start of goblin in tower------------------------------#              
                             if encounter == ("You walk in to the tower and spot a sleeping goblin."):
                                 
-                                encounter = inputC("Sneak by or surprise attatck!! (sneak or surprise) ")
+                                if(answerCheck): encounter =  inputC("Sneak by or surprise attatck!! (sneak or surprise) ")
                                 
                                 
 
@@ -173,7 +172,7 @@ class Event:
                                     break
                                 
                                 else:
-                                    encounter == ("You walk in to the tower and spot a sleeping goblin.") # for some reason this code just doesnt work
+                                    answerCheck = False
 
 
                                     if self.chanceToFlee((30 / 100)):
@@ -203,9 +202,9 @@ class Event:
                 #----------------------------------------End of tower encounter-------------------------------------#
                             
              #----------------------------------------start of camp encounter---------------------------------------#while true:        
-            
-                    if(event == "Along your journy you come across a camp."):
-                        encounter = random.choice(campEncounter)
+
+                    if(event == "Along your journey you come across a camp."):
+                        if(answerCheck): encounter = random.choice(campEncounter)
                         printC(encounter)
                         
                         if encounter == ("You walk closer to the camp. it appears to be deserted..."):
@@ -227,10 +226,10 @@ class Event:
                                 
                                 
                             else:
-                                encounter = ("You walk closer to the camp. it appears to be deserted...")
+                                answerCheck = False
                                     
 
-                        elif encounter == ("You walk closer to the camp.You spot a mysterious figure walking out of one the tents. "):
+                        elif encounter == ("You walk closer to the camp.You spot a mysterious figure walking out of one the tents."):
 
                             answer = inputC("Do you greet the mysterious figure?!!! (yes/no) ")
 
@@ -316,7 +315,7 @@ class Event:
                                 inputC("You continue on your way...")
                                 break
                             else:
-                                encounter == ("You walk closer to the camp.You spot a mysterious figure walking out of one the tents. ")
+                                answerCheck = False
 
 
 
