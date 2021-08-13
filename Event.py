@@ -125,7 +125,8 @@ class Event:
                         answer = inputC("Would you like to enter the tower (yes/no) ").capitalize() # user decides whether to enter the tower or not (risks included)
                         if(answerCheck): encounter = random.choice(towerEncounter)
 
-                        if(answer == "Yes"):   # Decision statement from the player to enter the tower  
+                        if(answer == "Yes"):   # Decision statement from the player to enter the tower
+                            answerCheck = True
                             self.Player.gainDay()   # add 1 day to the gain day counter
                                # this picks a random encounter inside the towerEncounter array. then stores it temporarily in the encounter var
 
@@ -172,6 +173,7 @@ class Event:
                                     break
                                 
                                 else:
+                                    print("I'm sorry, but that's not a valid answer")
                                     answerCheck = False
 
 
@@ -199,6 +201,7 @@ class Event:
                             break
                         else:
                             print("I'm sorry, but that's not a valid answer") # catch statement 
+                            answerCheck = False
                 #----------------------------------------End of tower encounter-------------------------------------#
                             
              #----------------------------------------start of camp encounter---------------------------------------#while true:        
@@ -216,16 +219,19 @@ class Event:
                                 self.Player.gainDay()
                                 self.Player.gainHealth(10)
                                 printC("You gained 10 hit ponits")
+                                answerCheck = True
                                 break
 
 
                             elif(answer == "no"):
                                 answer == inputC("You continue on your way.Press enter to continue...")
                                 self.Player.gainDay()
+                                answerCheck = True
                                 break
                                 
                                 
                             else:
+                                print("I'm sorry, but that's not a valid answer")
                                 answerCheck = False
                                     
 
@@ -247,11 +253,13 @@ class Event:
                                             
                                         if (battle.Fight() == False): self.die()
                                         self.Player.gainDay()
+                                        answerCheck = True
                                         break
                                         
                                 elif inputC("The druid appears to be friendly. He pulls the energy from the plants and trees around to heal all your wounds"):
                                     self.Player.Health = self.Player.maxHealth
                                     inputC("You have been fully restored says the druid!!!!")
+                                    answerCheck = True
                                     break
                                         
 
@@ -264,6 +272,7 @@ class Event:
 
                                             if (battle.Fight() == False): self.die()
                                             self.Player.gainDay()
+                                            answerCheck = True
                                             break
 
                                         elif inputC("The goblin appears to be friendly"):
@@ -287,34 +296,41 @@ class Event:
 
                                                     inputC("You have purchased the " + Weapon.name)
                                                     inputC("Cool a new weapon")
-
+                                                    answerCheck = True
                                                     break
                                                 elif answer == ("Weapon one"):
                                                     shopWeapon2.goldCost = self.Player.loseMoney()
                                                     
                                                     inputC("You have purchased the " + Weapon.name)
                                                     inputC("Cool a new weapon")
-
+                                                    answerCheck = True
                                                     break
                                                 elif answer == ("Potion"): # potion not currently coded
+                                                    answerCheck = True
                                                     break
 
                                                 elif answer == ("leave"):
                                                     inputC("You left the shop!!!")
+                                                    answerCheck = True
                                                     break
                                                 else:
                                                     printC("Sorry thats not a answer")
+                                                    answerCheck = False
                                                     
                                             if(answer == "no"):
-                                                inputC("You decide not to see his wears and you continue on your way...") 
+                                                inputC("You decide not to see his wears and you continue on your way...")
+                                                answerCheck = True 
                                                 break  
                                             else:
-                                                printC("Sorry thats not a answer")
+                                                print("Sorry thats not a answer")
+                                                answerCheck = False
 
                             if(answer == "no"):
                                 inputC("You continue on your way...")
+                                answerCheck = True
                                 break
                             else:
+                                print("I'm sorry, but that's not a valid answer")
                                 answerCheck = False
 
 
@@ -334,6 +350,7 @@ class Event:
                         if(answer == "face"):
                             if (battle.Fight() == False): self.die()
                             self.Player.gainDay()
+                            answerCheck = True
                             break
 
 
@@ -341,14 +358,17 @@ class Event:
                             if self.chanceToFlee((30 / 100)):
                                 printC("You successfully fled from the {} {}!"  .format( goblin.firstName , goblin.lastName))
                                 self.Player.gainDay()
+                                answerCheck = True
                                 break
 
                         else:
                             printC("You failed your attempt to flee from the {} {}!"  .format( goblin.firstName , goblin.lastName))
                             if (battle.Fight() == False): self.die()
+                            answerCheck = True
                             break
 
                     else:
-                        event == ("You encounter a stray goblin on your journey.")      
+                        print("I'm sorry, but that's not a valid answer")
+                        answerCheck = False
                 #-----------------------------------------End of goblin encounter--------------------------------#
                 
