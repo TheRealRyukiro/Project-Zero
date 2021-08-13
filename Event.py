@@ -159,7 +159,7 @@ class Event:
                             if encounter == ("You walk in to the tower and spot a sleeping goblin."):
                                 
                                 if(answerCheck): encounter =  inputC("Sneak by or surprise attatck!! (sneak or surprise) ")
-                                
+                                sleepyGoblin = Person ("Sleepy","goblin",self.Player.Difficulty,30,0,False, Weapon.rustySword)
                                 
 
                                 if(encounter == "surprise"):

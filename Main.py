@@ -58,7 +58,7 @@ print("Your starting gold is: {:,.2f}".format(Player.Money))
 print("Your starting carry weight is: "+  str(Player.currentCarryWeight) + "/ "+ str(Player.maxCarryWeight))
 input("Press enter key to continue...")
 print("\n~~~~~~~~~~~~~~~~~~~~~~")
-
+4
 print("First Name: " + Player.firstName + "\nLast Name: " + Player.lastName + "\nWeight: " + str(Player.currentCarryWeight) +  "/ " + str(Player.maxCarryWeight) 
 + " lbs\nGold: {:,.2f}".format(Player.Money))
 print("\n~~~~~~~~~~~~~~~~~~~~~~")
