@@ -173,7 +173,7 @@ class Event:
                                     break
                                 
                                 else:
-                                    print("I'm sorry, but that's not a valid answer")
+                                    printC("I'm sorry, but that's not a valid answer")
                                     answerCheck = False
 
 
@@ -200,7 +200,7 @@ class Event:
                             self.Player.gainDay() # Add 1 day to the gain day counter
                             break
                         else:
-                            print("I'm sorry, but that's not a valid answer") # catch statement 
+                            printC("I'm sorry, but that's not a valid answer") # catch statement 
                             answerCheck = False
                 #----------------------------------------End of tower encounter-------------------------------------#
                             
@@ -231,7 +231,7 @@ class Event:
                                 
                                 
                             else:
-                                print("I'm sorry, but that's not a valid answer")
+                                printC("I'm sorry, but that's not a valid answer")
                                 answerCheck = False
                                     
 
@@ -330,7 +330,7 @@ class Event:
                                 answerCheck = True
                                 break
                             else:
-                                print("I'm sorry, but that's not a valid answer")
+                                printC("I'm sorry, but that's not a valid answer")
                                 answerCheck = False
 
 
@@ -368,7 +368,7 @@ class Event:
                             break
 
                     else:
-                        print("I'm sorry, but that's not a valid answer")
+                        printC("I'm sorry, but that's not a valid answer")
                         answerCheck = False
                 #-----------------------------------------End of goblin encounter--------------------------------#
                 
