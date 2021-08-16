@@ -4,38 +4,28 @@
 """
 
 class Person:
-    def __init__(self, firstName, lastName, Difficulty, health, Speed, isFriendly = True, equippedWeapon = None): #def means to define x as a function. __init__ is the constructor that initializes the class when called. everything in the () are parameters to the constructor.
-        # The Person's name
-        self.firstName = firstName
-        self.lastName = lastName
+    def __init__(self, firstName, lastName, Difficulty, Health, Speed, isFriendly = True, equippedWeapon = None): #def means to define x as a function. __init__ is the constructor that initializes the class when called. everything in the () are parameters to the constructor.
+        # The Person's parameters being assigned
+        self.firstName, self.lastName, self.Difficulty, self.maxHealth, self.Speed, self.isFriendly, self.EquippedWeapon = firstName, lastName, Difficulty, Health, Speed, isFriendly, equippedWeapon
+        
+        # Combining the first and last name as well as 
         self.fullName = self.firstName + " " + self.lastName
         
         # The Person's Level management
         self.Level = 1
         self.Exp = 0
-        self.ExpLevelUp = 10
+        self.expLevelUp = 10
         
 
         # The Person's weight        
-        self.maxCarryWeight = 30
         self.currentCarryWeight = 0
+        self.maxCarryWeight = 30
+
         # How much money the person has to use or drop.
         self.Money = 0
+
         # How much health the person has
-        self.maxHealth = health
         self.Health = self.maxHealth
-        
-        # default speed of person
-        self.Speed = Speed
-        
-        
-        # what weapon the person has equipped
-        self.equippedWeapon = equippedWeapon
-        
-        # what Difficulty is the person
-        self.Difficulty = Difficulty
-        # if the person is friendly to the player or not
-        self.isFriendly = isFriendly
         
         # how many Days the player survived
         self.Days = 0
