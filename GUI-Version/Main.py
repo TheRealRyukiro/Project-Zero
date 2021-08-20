@@ -13,7 +13,7 @@ screen = pygame.display.set_mode((600,600)) # creates the screen and set the (wi
 
 #----------Title and logo --------------------#
 pygame.display.set_caption("Text Adventure v0.0.1")  #creates and set the caption tile for the game 
-icon = pygame.image.load("gameicon.png")            # loads the image fo the game called gameicon   
+icon = pygame.image.load("GUI-Version/gameicon.png")            # loads the image fo the game called gameicon   
 pygame.display.set_icon(icon)                         # displays the icon next the caption tile in the GUI
 
 #----------------Game loop-----------------#
