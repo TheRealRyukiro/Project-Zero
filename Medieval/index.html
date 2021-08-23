@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--wesiteTitle-->
+        <title>Medieval IO</title>
+    </head>
+    <body>
+        <!--Overlay text data-->
+        <div id = "overlay">
+            <div id = "overlay-body">
+                <label for = "nameInput" class = "slidein">Enter your Character's Name</label><br><br>
+                <input id = "nameInput" type="text" placeholder="Enter your character's name" autocomplete="off" /><br><br>
+                <input class = "fadein" id = "submitName" type="button" value="Click to Start" onclick="submitName()" />
+            </div>
+        </div>
+        <!--Exterior Links-->
+        <div id="links">
+            <a href="index.html">Home</a> - 
+            <a href="inventory.html">Inventory</a> - 
+            <a href="shop.html">Shop</a> -
+            <a href="WoodCuttingg.html">Woodcutting</a> -
+            <a href="Mining.html">Mining</a> - 
+            <a href="Adventure.html">Adventure</a>
+        </div>
+    
+        <!--Player stats-->
+        <div id = "playerStats">
+        <h1 id="Name">Welcome, Hero</h1>
+        <p id="Health">Health: 100,000 / 250,000</p>
+        <p id="Stamina">Stamina: 650 / 650</p>
+        <p id ="Mana">Mana: 1000 / 1000</p>
+        <p id ="Money">Money: 903,550,128</p>
+        <p id ="Carryweight">carryweight: 100lbs / 230lbs</p>
+        <p id="Days Survived">Days Survived: 605</p>
+        </div>
+        <!--Player stats-->
+    
+    
+    
+        <link rel="preload" href="assets/fonts/DPComicRegular.ttf" as="font" type="font/ttf" crossorigin>
+        <link rel="preload" href="assets/fonts/DPComicRegular.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="assets/fonts/DPComicRegular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="style.css" />
+        <script type="text/javascript" src="main.js"></script>
+    </body>
+</html>

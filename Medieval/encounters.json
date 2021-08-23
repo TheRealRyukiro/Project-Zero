@@ -1,0 +1,24 @@
+{  
+
+    "locationEncounters" : ["Along your journey you come across a camp.",
+                        "You encounter a stray goblin on your journey.",
+                        "You walk along the path and find tower."] 
+                        ,
+
+    "towerEncounter" : ["You enter the tower and find a ragged bag. Who knows what's inside?!!",
+                        "You walk in to the tower and spot a sleeping goblin."]
+                        ,
+
+
+
+    "bagRandomizer" : ["You open the bag and to your suprise you find a pouch of gold!!!",
+                    "You open the bag and find a mysterious tome, you open the book.The books pages turn rapidly.You have acquired new knowledge!!!"]
+                    ,
+
+
+    "campEncounter" : ["You walk closer to the camp.You spot a mysterious figure walking out of one the tents.",
+                    "You walk closer to the camp. it appears to be deserted..."  ]
+
+
+}
+
