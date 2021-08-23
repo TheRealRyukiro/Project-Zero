@@ -9,7 +9,8 @@ pygame.init()
 
 
 #----------Screen initialization-------------#
-screen = pygame.display.set_mode((600,600)) # creates the screen and set the (width , height) of the GUI
+
+screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN) # creates the screen and set the (width , height) of the GUI
 
 #----------Title and logo --------------------#
 pygame.display.set_caption("Text Adventure v0.0.1")  #creates and set the caption tile for the game 
