@@ -1,4 +1,4 @@
-# HTML Version of Medieval Game
+# Mobile App Version of Medieval Game
 >## ROADMAP
 >>### Working in Game Now:
 >> - Nothing ***\*crickets\****
@@ -12,3 +12,10 @@
 >>        - Fight a goblin
 >>    - Working Basic Crafting
 >>        - Craft a sword
+
+# Mobile TO-DO Board
+>## TO-DO
+>> - Working Hello World on Kotlin! 
+>> - Working Hello World on Swift! 
+>> - Display icon for app
+>> - 
